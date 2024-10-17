@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation Page</title>
+</head>
+<body>
+<!--First Name :<span th:field="${customer.firstName}" th:text="${customer.firstName}"> </span>-->
+<!--Last Name: <span th:field="${customer.lastName}" th:text="${customer.lastName}"></span>-->
+Customer Confirmed: <span th:text="${customer.firstName}+' '+${customer.lastName}"/>
+<br><br>
+Free Passes :<span th:text="${customer.passes}" />
+
+<br><br>
+Pin code: <span th:text="${customer.pincode}" />
+
+</body>
+</html>

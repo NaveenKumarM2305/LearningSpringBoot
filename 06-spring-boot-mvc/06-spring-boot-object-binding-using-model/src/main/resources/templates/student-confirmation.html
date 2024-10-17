@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation </title>
+</head>
+<body>
+The first name of the student is: <span th:text="${student.firstName}"  />
+<br><br>
+and last name of the student is : <span th:text="${student.lastName}" />
+<br><br>
+Country: <span th:text="${student.country}" />
+
+Favorite Language: <span th:text="${student.favoriteLanguage}"></span>
+<br>
+Favoirte OS :
+<!--To display in the form of array-->
+<!--<span th:text="${student.favoriteSystem}"></span>-->
+
+<!--Dispaly is bullet list-->
+<ul>
+    <li th:each="system : ${student.favoriteSystem}" th:text="${system}" />
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .error{
+    color:red;
+    }
+
+  </style>
+</head>
+<body>
+
+<i>required fields are represented as (*) </i>
+<form  th:action="@{/validateForm}" th:object="${customer}" method="POST">
+
+  First Name: <input type="text" th:field="*{firstName}" />
+  <br><br>
+
+  Last Name(*) : <input type="text" th:field="*{lastName}" />
+
+  <span th:if="${#fields.hasErrors('lastName')}"
+        th:errors="*{lastName}"
+        class="error"></span>
+<br><br>
+
+    Number of Passes: <input type="text" th:field="*{passes}" />
+    <span th:if="${#fields.hasErrors('passes')}"
+          th:errors="*{passes}"
+          class="error"></span>
+    <br><br>
+
+    Pin code: <input type="text" th:field="*{pincode}" />
+    <span th:if="${#fields.hasErrors('pincode')}"
+          th:errors="*{pincode}"
+          class="error"></span>
+    <br><br>
+
+    <br><br><br>
+Course-code: <input type="text" th:field="*{courseCode}" />
+    <span th:if="${#fields.hasErrors('courseCode')}"
+          th:errors="*{courseCode}"
+          class="error"></span>
+    <br><br>
+
+
+    <input type="submit" value="Submit">
+
+</form>
+</body>
+</html>
