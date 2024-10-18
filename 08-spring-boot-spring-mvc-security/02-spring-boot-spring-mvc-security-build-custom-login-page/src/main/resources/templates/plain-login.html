@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style >
+        p{
+        color:red;
+        }
+    </style>
+
+</head>
+<body>
+<h3>Login Form</h3>
+<hr>
+<form action="#" th:action="@{/authenticateTheUser}" method="POST">
+
+<!--    To display error message if the Loing fail-->
+    <div th:if="${param.error}">
+
+<p>Login Failed. Invalid Username and password</p>
+
+
+    </div>
+
+
+
+<!--     spring security filters  will read the form data  and authenticat the user-->
+<!--    only if hte name="username" and name="password" as it has predefined name-->
+    Username: <input type="text"  name="username">
+    <br><br>
+    Password: <input type="password" name="password">
+    <br>
+    <br>
+    <input type="submit" value="Login">
+
+</form>
+</body>
+</html>

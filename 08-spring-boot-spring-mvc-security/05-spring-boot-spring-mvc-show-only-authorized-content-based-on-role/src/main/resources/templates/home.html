@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+Welcome Home
+<hr>
+Ohhyaaaa Successfull!
+
+<br>
+<br>
+<hr>
+<p>Username: <span sec:authentication="principal.username"></span></p>
+<p> Role: <span  sec:authentication="principal.authorities"></span></p>
+<hr>
+
+<form action="#" th:action="@{/logout}" method="POST">
+
+    <input type="submit"  onclick="if(!(confirm('Are you Sure to Logout?'))) return false" th:value="Logout">
+
+</form>
+<hr>
+<!--show content based on roles-->
+<div sec:authorize="hasRole('MANAGER')">
+    <a th:href="@{/leaders}">Go to Leaders (Only allowed for Managers and admins</a>
+</div>
+
+    <br>
+<br>
+<hr>
+<!--show content based on roles-->
+<div sec:authorize="hasRole('ADMIN')">
+<a th:href="@{/systems}">Go to Systems(Only allowed for Admin)</a>
+</div>
+</body>
+</html>

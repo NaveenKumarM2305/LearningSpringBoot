@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+Welcome Home
+<hr>
+Ohhyaaaa Successfull!
+
+<br>
+<br>
+
+<form action="#" th:action="@{/logout}" method="POST">
+
+    <input type="submit"  onclick="if(!(confirm('Are you Sure to Logout?'))) return false" th:value="Logout">
+
+</form>
+
+</body>
+</html>
