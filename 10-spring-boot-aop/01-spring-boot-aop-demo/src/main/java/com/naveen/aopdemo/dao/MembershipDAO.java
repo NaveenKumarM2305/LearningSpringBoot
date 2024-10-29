@@ -1,6 +1,6 @@
 package com.naveen.aopdemo.dao;
 
-public interface AccountDAO {
+public interface MembershipDAO {
 public void addAccount();
 
 }

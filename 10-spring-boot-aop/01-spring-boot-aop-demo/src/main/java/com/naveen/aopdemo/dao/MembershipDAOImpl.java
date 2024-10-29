@@ -3,11 +3,11 @@ package com.naveen.aopdemo.dao;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AccountDAOImpl implements  AccountDAO{
+public class MembershipDAOImpl implements  MembershipDAO{
 
 
     @Override
     public void addAccount() {
-        System.out.println(getClass()+" Adding Account by execution addAccont()");
+        System.out.println(getClass()+" Adding Membership Account by execution  Membership addAccont()");
     }
 }
